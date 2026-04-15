@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import TimelineHeader from "../../components/timelinePage/TimelineHeading";
 
 const TimelinePage = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <TimelineHeader />
+    </>
   );
 };
 

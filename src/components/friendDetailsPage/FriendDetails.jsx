@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { FiArchive } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -9,7 +9,8 @@ import { FriendsContext } from "../../context/FriendsContextProvider";
 
 const FriendDetails = () => {
   const { id } = useParams();
-  const { friends, setFriends, loading } = useContext(FriendsContext);
+  const { friends, setFriends, loading, handleConnectBtn } =
+    useContext(FriendsContext);
   const navigate = useNavigate();
 
   const expectedFriend = friends.find((frd) => frd.id === Number(id)) || {};
@@ -122,7 +123,9 @@ const FriendDetails = () => {
 
                   <p className="text-[#64748B] text-sm">
                     <span>Preferred: </span>
-                    <Link to={`mailto:${email}`}>{email}</Link>
+                    <a href={`mailto:${email}`} target="_blank">
+                      {email}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -199,21 +202,30 @@ const FriendDetails = () => {
               </p>
 
               <div className="flex flex-col lg:flex-row gap-4">
-                <button className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center">
+                <button
+                  onClick={() => handleConnectBtn(expectedFriend, "call")}
+                  className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
+                >
                   <span>
                     <PhoneCall size={32} />
                   </span>
                   <span>Call</span>
                 </button>
 
-                <button className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center">
+                <button
+                  onClick={() => handleConnectBtn(expectedFriend, "text")}
+                  className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
+                >
                   <span>
                     <MessageSquareMore size={32} />
                   </span>
                   <span>Text</span>
                 </button>
 
-                <button className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center">
+                <button
+                  onClick={() => handleConnectBtn(expectedFriend, "video")}
+                  className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
+                >
                   <span>
                     <Video size={32} />
                   </span>
