@@ -6,11 +6,13 @@ import RootLayout from "./layout/RootLayout.jsx";
 import { RouterProvider } from "react-router";
 import { router } from "./routes/Routes.jsx";
 import FriendsContextProvider from "./context/FriendsContextProvider.jsx";
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <FriendsContextProvider>
       <RouterProvider router={router} />
+      <ToastContainer />
     </FriendsContextProvider>
   </StrictMode>,
 );

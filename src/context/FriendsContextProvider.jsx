@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const FriendsContext = createContext();
 
@@ -20,7 +21,25 @@ const FriendsContextProvider = ({ children }) => {
   }, []);
 
   const handleConnectBtn = (friend, connectType) => {
-    console.log(friend, connectType);
+    const currentDateTime = new Date().toLocaleString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+
+    setConnectList([
+      ...connectList,
+      { ...friend, connectType, connectedAt: currentDateTime },
+    ]);
+
+    toast(
+      <p className="bg-linear-to-r from-blue-500 via-fuchsia-500 to-emerald-500 bg-clip-text text-transparent font-bold text-lg">
+        {connectType} with {friend.name}
+      </p>,
+    );
   };
 
   const data = {

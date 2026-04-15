@@ -9,7 +9,7 @@ const TimelineHeading = () => {
           <h2 className="pb-6 text-[#1F2937] text-5xl font-bold">Timeline</h2>
 
           <div className="dropdown dropdown-bottom">
-            <div tabIndex={0} role="button" className="btn m-1 flex gap-30 items-center text-[#64748B]">
+            <div tabIndex={0} role="button" className="btn m-1 flex sm:gap-30 items-center text-[#64748B]">
               <span>Filter timeline</span>
               <span><ChevronDown size={20} /></span>
             </div>

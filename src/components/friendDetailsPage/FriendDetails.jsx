@@ -203,7 +203,7 @@ const FriendDetails = () => {
 
               <div className="flex flex-col lg:flex-row gap-4">
                 <button
-                  onClick={() => handleConnectBtn(expectedFriend, "call")}
+                  onClick={() => handleConnectBtn(expectedFriend, "Call")}
                   className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
                 >
                   <span>
@@ -213,7 +213,7 @@ const FriendDetails = () => {
                 </button>
 
                 <button
-                  onClick={() => handleConnectBtn(expectedFriend, "text")}
+                  onClick={() => handleConnectBtn(expectedFriend, "Text")}
                   className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
                 >
                   <span>
@@ -223,7 +223,7 @@ const FriendDetails = () => {
                 </button>
 
                 <button
-                  onClick={() => handleConnectBtn(expectedFriend, "video")}
+                  onClick={() => handleConnectBtn(expectedFriend, "Video")}
                   className="flex-1 btn py-4 px-23 h-23.75 bg-[#F8FAFC] border-[#E9E9E9] rounded-lg text-[#1F2937] text-lg flex flex-col gap-2 justify-center items-center"
                 >
                   <span>
