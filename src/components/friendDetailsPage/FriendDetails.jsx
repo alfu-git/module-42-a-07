@@ -1,15 +1,16 @@
-import React from "react";
-import { Link, useParams } from "react-router";
-import useFriends from "../../hooks/useFriends";
+import React, { useContext } from "react";
+import { Link, useNavigate, useParams } from "react-router";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { FiArchive } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MessageSquareMore, PhoneCall, Video } from "lucide-react";
 import Loading from "../shared/loading/Loading";
+import { FriendsContext } from "../../context/FriendsContextProvider";
 
 const FriendDetails = () => {
   const { id } = useParams();
-  const { friends, loading } = useFriends();
+  const { friends, setFriends, loading } = useContext(FriendsContext);
+  const navigate = useNavigate();
 
   const expectedFriend = friends.find((frd) => frd.id === Number(id)) || {};
 
@@ -49,6 +50,15 @@ const FriendDetails = () => {
           .join("-"),
       )
       ?.join(" ");
+  };
+
+  const handleDeleteBtn = (expectedFriend) => {
+    const filterFriend = friends.filter(
+      (frd) => frd.id !== Number(expectedFriend.id),
+    );
+    setFriends(filterFriend);
+
+    navigate("/");
   };
 
   if (loading) {
@@ -129,7 +139,10 @@ const FriendDetails = () => {
                 Archive
               </button>
 
-              <button className="btn shadow-none bg-base-100 border-[#E9E9E9] w-full h-13 text-[#EF4444] flex gap-2 justify-center items-center">
+              <button
+                onClick={() => handleDeleteBtn(expectedFriend)}
+                className="btn shadow-none bg-base-100 border-[#E9E9E9] w-full h-13 text-[#EF4444] flex gap-2 justify-center items-center"
+              >
                 <FaRegTrashAlt size={20} />
                 Delete
               </button>

@@ -5,9 +5,12 @@ import App from "./App.jsx";
 import RootLayout from "./layout/RootLayout.jsx";
 import { RouterProvider } from "react-router";
 import { router } from "./routes/Routes.jsx";
+import FriendsContextProvider from "./context/FriendsContextProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FriendsContextProvider>
+      <RouterProvider router={router} />
+    </FriendsContextProvider>
   </StrictMode>,
 );

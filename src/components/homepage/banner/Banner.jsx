@@ -1,7 +1,11 @@
 import { Plus } from "lucide-react";
-import React from "react";
+import React, { useContext } from "react";
+import { FriendsContext } from "../../../context/FriendsContextProvider";
 
 const Banner = () => {
+  const { friends } = useContext(FriendsContext);
+  const filterOnTrack = friends.filter((frd) => frd.status === "on-track");
+
   return (
     <section className="container mx-auto px-5 pt-20">
       <div>
@@ -30,14 +34,14 @@ const Banner = () => {
           <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
             <div className="p-8 bg-base-100 rounded-lg shadow text-center">
               <span className="text-[32px] font-semibold text-[#244D3F] flex flex-col gap-y-2 items-center justify-center">
-                10
+                {friends.length}
               </span>
               <span className="text-lg text-[#64748B]">Total Friends</span>
             </div>
 
             <div className="p-8 bg-base-100 rounded-lg shadow text-center flex flex-col gap-y-2 items-center justify-center">
               <span className="text-[32px] font-semibold text-[#244D3F]">
-                3
+                {filterOnTrack.length}
               </span>
               <span className="text-lg text-[#64748B]">On Track</span>
             </div>

@@ -1,11 +1,10 @@
-import React from "react";
-import useFriends from "../../../hooks/useFriends";
+import React, { useContext } from "react";
 import FriendCard from "./friendCard/FriendCard";
 import Loading from "../../shared/loading/Loading";
+import { FriendsContext } from "../../../context/FriendsContextProvider";
 
 const FriendsSection = () => {
-  const { friends, loading } = useFriends();
-  console.log(friends);
+  const { friends, loading } = useContext(FriendsContext);
 
   return (
     <section className="mt-10 pb-20 container mx-auto px-5">
