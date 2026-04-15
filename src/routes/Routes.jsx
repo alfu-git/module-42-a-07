@@ -4,6 +4,7 @@ import RootLayout from '../layout/RootLayout';
 import HomePage from '../pages/homePage/HomePage';
 import TimelinePage from '../pages/timelinePage/TimelinePage';
 import StatsPage from '../pages/statsPage/StatsPage';
+import FriendDetailsPage from '../pages/friendDetailsPage/FriendDetailsPage';
 
 export let router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export let router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />
+      },
+      {
+        path: "/:id",
+        element: <FriendDetailsPage />
       },
       {
         path: "time-line-page",

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
 
 const FriendCard = ({ friend }) => {
-  const { picture, name, days_since_contact, tags, status } = friend;
+  const { id, picture, name, days_since_contact, tags, status } = friend;
 
   const tagColors = {
     neighbor: "bg-blue-100 text-blue-700",
@@ -30,7 +31,7 @@ const FriendCard = ({ friend }) => {
   };
 
   return (
-    <div className="p-6 bg-base-100 rounded-lg shadow">
+    <Link to={`/${id}`} className="p-6 bg-base-100 rounded-lg shadow">
       <div className=" flex flex-col justify-center items-center">
         <div className="mb-3 w-20 h-20 object-cover rounded-full">
           <figure>
@@ -74,7 +75,7 @@ const FriendCard = ({ friend }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
