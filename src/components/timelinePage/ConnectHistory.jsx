@@ -6,7 +6,6 @@ import VideoPng from "../../assets/video.png";
 
 const ConnectHistory = () => {
   const { connectList } = useContext(FriendsContext);
-  console.log(connectList);
 
   return (
     <section className="mt-6 pb-20 container mx-auto px-5">

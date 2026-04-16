@@ -7,6 +7,7 @@ const FriendsContextProvider = ({ children }) => {
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
   const [connectList, setConnectList] = useState([]);
+  const [sortTypeText, setSortTypeText] = useState("Filter timeline");
 
   useEffect(() => {
     const fetchFriends = async () => {
@@ -42,6 +43,10 @@ const FriendsContextProvider = ({ children }) => {
     );
   };
 
+  const handleSortBtn = (sortType) => {
+    setSortTypeText(sortType);
+  };
+
   const data = {
     friends,
     setFriends,
@@ -49,6 +54,8 @@ const FriendsContextProvider = ({ children }) => {
     connectList,
     setConnectList,
     handleConnectBtn,
+    sortTypeText,
+    handleSortBtn,
   };
 
   return (

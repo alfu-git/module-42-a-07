@@ -1,12 +1,12 @@
 import React from "react";
 
-const EmptyHistoryState = () => {
+const EmptyState = ({text}) => {
   return (
     <section className="py-20 container mx-auto px-5">
       <div>
         <div className="py-20 bg-base-100 rounded-lg shadow-sm text-center">
           <p className="text-4xl text-zinc-400 font-bold">
-            No History Available
+            No {text} Available
           </p>
         </div>
       </div>
@@ -14,4 +14,4 @@ const EmptyHistoryState = () => {
   );
 };
 
-export default EmptyHistoryState;
+export default EmptyState;
