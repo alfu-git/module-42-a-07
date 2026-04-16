@@ -5,6 +5,7 @@ import HomePage from '../pages/homePage/HomePage';
 import TimelinePage from '../pages/timelinePage/TimelinePage';
 import StatsPage from '../pages/statsPage/StatsPage';
 import FriendDetailsPage from '../pages/friendDetailsPage/FriendDetailsPage';
+import NotFoundPage from '../pages/notFoundPage/NotFoundPage';
 
 export let router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ export let router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: "/:id",
+        path: "friend/:id",
         element: <FriendDetailsPage />
       },
       {
@@ -26,6 +27,10 @@ export let router = createBrowserRouter([
       {
         path: "stats-page",
         element: <StatsPage />
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />
       }
     ]
   }
