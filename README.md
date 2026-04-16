@@ -1,16 +1,52 @@
-# React + Vite
+# 🚀 KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📝 A React single-page application with a dynamic routing system that lets users explore friends, perform real-time interactions (chat, call, video), and track all activities through a timeline and analytics dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Features
 
-## React Compiler
+✨ Key features:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 👤 View friend details on a separate page
+* 💬 Real-time call, chat, and video communication
+* 🕒 View communication history on the timeline page
+* 🔍 Sort history by 📞 calls, 💬 messages, 🎥 videos, and 📅 date
+* 📊 Visualize total interactions using a interactive pie chart (calls, texts, videos)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+* 💻 Frontend: React, JavaScript, Tailwind CSS, CSS, HTML
+
+---
+
+## 🌍 Demo
+
+🔗 Live Demo: https://your-demo-link.com
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run locally:
+
+```
+git clone https://github.com/alfu-git/module-42-a-07.git
+cd module-42-a-07
+npm install
+npm start
+```
+
+---
+
+## 👤 Author
+
+- 🙋‍♂️ MD Alfaz
+- 🔗 GitHub: https://github.com/alfu-git 
+- 💼 LinkedIn: https://www.linkedin.com/in/md-alfaz-dev7
+
+---
+
+⭐ Don't forget to give this project a star if you like it!
