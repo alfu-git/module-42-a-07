@@ -22,7 +22,6 @@ const FriendsContextProvider = ({ children }) => {
   }, []);
 
   const handleConnectBtn = (friend, connectType) => {
-
     setConnectList([
       ...connectList,
       { ...friend, connectType, connectedAt: new Date() },

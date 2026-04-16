@@ -5,8 +5,8 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <section className="container mx-auto px-5 pt-20 pb-7.5 bg-[#244D3F]">
-      <div>
+    <section className="bg-[#244D3F]">
+      <div className="container mx-auto px-5 pt-20 pb-7.5">
         <div>
           <div className="mb-10 text-center">
             <h4 className="mb-4 text-5xl text-base-100 flex justify-center">

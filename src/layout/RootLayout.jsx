@@ -14,7 +14,7 @@ const RootLayout = () => {
       </header>
 
       <main className="flex-1">
-        <section className="container mx-auto px-5 bg-[#F8FAFC]">
+        <section className="bg-[#F8FAFC]">
           <Outlet />
         </section>
       </main>

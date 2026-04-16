@@ -45,7 +45,7 @@ const FriendCard = ({ friend }) => {
             {days_since_contact}d ago
           </span>
 
-          <div className="mt-2 mb-3 flex gap-1 items-center justify-center">
+          <div className="mt-2 mb-3 flex flex-wrap gap-1 items-center justify-center">
             {tags.map((tag, index) => (
               <span
                 key={index}

@@ -8,17 +8,15 @@ import modifyDate from "../../function/modifyDate";
 const ConnectHistory = () => {
   const { connectList, sortTypeText } = useContext(FriendsContext);
 
-      let sortedList = [...connectList];
+  let sortedList = [...connectList];
 
-    if (sortTypeText === "Date") {
-      sortedList.sort(
-        (a, b) => new Date(b.connectedAt) - new Date(a.connectedAt),
-      );
-    } else if (sortTypeText !== "Filter timeline") {
-      sortedList = sortedList.filter(
-        (list) => list.connectType === sortTypeText,
-      );
-    }
+  if (sortTypeText === "Date") {
+    sortedList.sort(
+      (a, b) => new Date(b.connectedAt) - new Date(a.connectedAt),
+    );
+  } else if (sortTypeText !== "Filter timeline") {
+    sortedList = sortedList.filter((list) => list.connectType === sortTypeText);
+  }
 
   return (
     <section className="mt-6 pb-20 container mx-auto px-5">
