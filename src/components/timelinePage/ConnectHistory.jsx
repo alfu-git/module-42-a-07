@@ -3,15 +3,28 @@ import { FriendsContext } from "../../context/FriendsContextProvider";
 import CallPng from "../../assets/call.png";
 import TextPng from "../../assets/text.png";
 import VideoPng from "../../assets/video.png";
+import modifyDate from "../../function/modifyDate";
 
 const ConnectHistory = () => {
-  const { connectList } = useContext(FriendsContext);
+  const { connectList, sortTypeText } = useContext(FriendsContext);
+
+      let sortedList = [...connectList];
+
+    if (sortTypeText === "Date") {
+      sortedList.sort(
+        (a, b) => new Date(b.connectedAt) - new Date(a.connectedAt),
+      );
+    } else if (sortTypeText !== "Filter timeline") {
+      sortedList = sortedList.filter(
+        (list) => list.connectType === sortTypeText,
+      );
+    }
 
   return (
     <section className="mt-6 pb-20 container mx-auto px-5">
       <div>
         <div className="space-y-6">
-          {connectList.map((list) => (
+          {sortedList.map((list) => (
             <div
               key={list.id}
               className="p-4 bg-base-100 border border-[#E9E9E9] rounded-lg shadow flex flex-col sm:flex-row gap-4 sm:items-center"
@@ -43,7 +56,7 @@ const ConnectHistory = () => {
                 </p>
 
                 <span className="text-[#64748B] font-medium">
-                  {list.connectedAt}
+                  {modifyDate(list.connectedAt)}
                 </span>
               </div>
             </div>

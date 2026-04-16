@@ -22,18 +22,10 @@ const FriendsContextProvider = ({ children }) => {
   }, []);
 
   const handleConnectBtn = (friend, connectType) => {
-    const currentDateTime = new Date().toLocaleString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-    });
 
     setConnectList([
       ...connectList,
-      { ...friend, connectType, connectedAt: currentDateTime },
+      { ...friend, connectType, connectedAt: new Date() },
     ]);
 
     toast(

@@ -1,5 +1,5 @@
-import React from 'react';
-import FriendDetails from '../../components/friendDetailsPage/FriendDetails';
+import React from "react";
+import FriendDetails from "../../components/friendDetailsPage/FriendDetails";
 
 const FriendDetailsPage = () => {
   return (

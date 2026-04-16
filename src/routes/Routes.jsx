@@ -1,11 +1,11 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router';
-import RootLayout from '../layout/RootLayout';
-import HomePage from '../pages/homePage/HomePage';
-import TimelinePage from '../pages/timelinePage/TimelinePage';
-import StatsPage from '../pages/statsPage/StatsPage';
-import FriendDetailsPage from '../pages/friendDetailsPage/FriendDetailsPage';
-import NotFoundPage from '../pages/notFoundPage/NotFoundPage';
+import React from "react";
+import { createBrowserRouter } from "react-router";
+import RootLayout from "../layout/RootLayout";
+import HomePage from "../pages/homePage/HomePage";
+import TimelinePage from "../pages/timelinePage/TimelinePage";
+import StatsPage from "../pages/statsPage/StatsPage";
+import FriendDetailsPage from "../pages/friendDetailsPage/FriendDetailsPage";
+import NotFoundPage from "../pages/notFoundPage/NotFoundPage";
 
 export let router = createBrowserRouter([
   {
@@ -14,24 +14,24 @@ export let router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <HomePage />,
       },
       {
         path: "friend/:id",
-        element: <FriendDetailsPage />
+        element: <FriendDetailsPage />,
       },
       {
         path: "time-line-page",
-        element: <TimelinePage />
+        element: <TimelinePage />,
       },
       {
         path: "stats-page",
-        element: <StatsPage />
+        element: <StatsPage />,
       },
       {
         path: "*",
-        element: <NotFoundPage />
-      }
-    ]
-  }
-])
+        element: <NotFoundPage />,
+      },
+    ],
+  },
+]);

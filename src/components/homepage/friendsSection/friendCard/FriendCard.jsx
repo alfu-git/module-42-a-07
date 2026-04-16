@@ -31,7 +31,7 @@ const FriendCard = ({ friend }) => {
   };
 
   return (
-    <Link to={`friend/${id}`} className="p-6 bg-base-100 rounded-lg shadow">
+    <Link to={`/friend/${id}`} className="p-6 bg-base-100 rounded-lg shadow">
       <div className=" flex flex-col justify-center items-center">
         <div className="mb-3 w-20 h-20 object-cover rounded-full">
           <figure>
