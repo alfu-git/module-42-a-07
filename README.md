@@ -8,7 +8,6 @@
 
 ✨ Key features:
 
-* 👤 View friend details on a separate page
 * 💬 Real-time call, chat, and video communication
 * 🕒 View communication history on the timeline page
 * 🔍 Sort history by 📞 calls, 💬 messages, 🎥 videos, and 📅 date
